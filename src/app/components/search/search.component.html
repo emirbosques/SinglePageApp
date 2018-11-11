@@ -1,15 +1,18 @@
 <h1>
-    Heroes
-    <br>
+    Busqueda:
     <small>
-    Marvel & DC Comics
+    {{termino}}
   </small>
 </h1>
 <hr>
 
+<div class="alert alert-info" role="alert" *ngIf=" searchResult.length === 0 ">
+    No results with that search term!
+</div>
+
 <div class="card-columns">
 
-    <div class="card animated fadeIn" *ngFor="let heroe of allHeroes">
+    <div class="card animated fadeIn" *ngFor="let heroe of searchResult">
         <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
         <div class="card-body">
             <h5 class="card-title">{{heroe.nombre}}</h5>
@@ -19,8 +22,6 @@
             <button type="button" class="btn btn-block btn-outline-info" (click)="goToHeroeInfo(heroe.id)">
                 More info
             </button>
-
-            <!--  <a [routerLink]="['/heroe', heroe.code]" class="btn btn-block btn-outline-danger"> View More...</a> -->
 
         </div>
 
