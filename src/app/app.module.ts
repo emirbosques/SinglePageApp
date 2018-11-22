@@ -16,6 +16,7 @@ import { APP_ROUTING } from './app.routes';
 import { HeroesService } from './services/heroes.services';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { SearchComponent } from './components/search/search.component';
+import { CardHeroComponent } from './components/card-hero/card-hero.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchComponent } from './components/search/search.component';
     AboutComponent,
     AllheroesComponent,
     HeroeComponent,
-    SearchComponent
+    SearchComponent,
+    CardHeroComponent
   ],
   imports: [
     BrowserModule,

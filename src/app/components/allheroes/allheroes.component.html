@@ -9,22 +9,6 @@
 
 <div class="card-columns">
 
-    <div class="card animated fadeIn" *ngFor="let heroe of allHeroes">
-        <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
-        <div class="card-body">
-            <h5 class="card-title">{{heroe.nombre}}</h5>
-            <p class="card-text">{{heroe.bio}}</p>
-            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
-
-            <button type="button" class="btn btn-block btn-outline-info" (click)="goToHeroeInfo(heroe.id)">
-                More info
-            </button>
-
-            <!--  <a [routerLink]="['/heroe', heroe.code]" class="btn btn-block btn-outline-danger"> View More...</a> -->
-
-        </div>
-
-    </div>
-
+    <app-card-hero (heroeSelected)="goToHeroeInfo($event)" [heroe]="heroe" [index]="heroe.id" *ngFor="let heroe of allHeroes"></app-card-hero>
 
 </div>
